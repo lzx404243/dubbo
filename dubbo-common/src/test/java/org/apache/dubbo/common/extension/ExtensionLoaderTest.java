@@ -69,6 +69,7 @@ import java.util.Set;
 import static org.apache.dubbo.common.constants.CommonConstants.GROUP_KEY;
 import static org.apache.dubbo.common.extension.ExtensionLoader.getExtensionLoader;
 import static org.apache.dubbo.common.extension.ExtensionLoader.getLoadingStrategies;
+import static org.apache.dubbo.common.extension.ExtensionLoader.resetExtensionLoader;
 import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.CoreMatchers.instanceOf;
@@ -337,6 +338,7 @@ public class ExtensionLoaderTest {
 
         adaptive = loader.getAdaptiveExtension();
         assertTrue(adaptive instanceof AddExt3_ManualAdaptive);
+        ExtensionLoader.resetExtensionLoader(AddExt3.class);
     }
 
     @Test
