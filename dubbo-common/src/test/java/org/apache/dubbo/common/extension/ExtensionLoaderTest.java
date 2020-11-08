@@ -326,6 +326,7 @@ public class ExtensionLoaderTest {
             assertThat(ext, instanceOf(AddExt1_ManualAdd2.class));
             assertEquals("impl1", getExtensionLoader(AddExt1.class).getExtensionName(AddExt1_ManualAdd2.class));
         }
+        ExtensionLoader.resetExtensionLoader(AddExt1.class);
     }
 
     @Test
